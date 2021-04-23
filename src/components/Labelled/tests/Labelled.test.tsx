@@ -17,11 +17,11 @@ describe('<Labelled />', () => {
 
   it('passes required indicator prop along to the label', () => {
     const element = mountWithAppProvider(
-      <Labelled id="my-label" label="Label" requiredIndicator={true} />,
+      <Labelled id="my-label" label="Label" requiredIndicator />,
     );
     const label = element.find(Label);
 
-    expect(label.prop('requiredIndicator')).toBe(true)
+    expect(label.prop('requiredIndicator')).toBe(true);
   });
 
   describe('error', () => {

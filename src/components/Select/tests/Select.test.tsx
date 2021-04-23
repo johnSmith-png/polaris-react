@@ -363,13 +363,13 @@ describe('<Select />', () => {
   describe('requiredIndicator', () => {
     it('passes requiredIndicator prop to Labelled', () => {
       const element = mountWithAppProvider(
-        <Select label="Select" onChange={noop} requiredIndicator={true} />,
+        <Select label="Select" onChange={noop} requiredIndicator />,
       );
       const labelled = element.find(Labelled);
 
-      expect(labelled.prop('requiredIndicator')).toBe(true)
-    })
-  })
+      expect(labelled.prop('requiredIndicator')).toBe(true);
+    });
+  });
 });
 
 function noop() {}

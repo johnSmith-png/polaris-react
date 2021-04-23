@@ -1132,13 +1132,13 @@ describe('<TextField />', () => {
   describe('requiredIndicator', () => {
     it('passes requiredIndicator prop to Labelled', () => {
       const element = mountWithAppProvider(
-        <TextField label="TextField" onChange={noop} requiredIndicator={true} />,
+        <TextField label="TextField" onChange={noop} requiredIndicator />,
       );
       const labelled = element.find(Labelled);
 
-      expect(labelled.prop('requiredIndicator')).toBe(true)
-    })
-  })
+      expect(labelled.prop('requiredIndicator')).toBe(true);
+    });
+  });
 });
 
 function noop() {}
