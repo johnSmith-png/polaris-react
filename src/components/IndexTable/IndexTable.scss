@@ -111,6 +111,16 @@ $loading-panel-height: rem(53px);
 .TableRow {
   background-color: var(--p-surface);
   cursor: pointer;
+
+  // stylelint-disable-next-line selector-max-specificity
+  &.statusSuccess:not(.TableRow-hovered):not(.TableRow-selected) {
+    background-color: var(--p-surface-primary-selected);
+  }
+
+  // stylelint-disable-next-line selector-max-specificity
+  &.statusDisabled:not(.TableRow-hovered):not(.TableRow-selected) {
+    background-color: var(--p-surface-subdued);
+  }
 }
 
 .TableRow-hovered {
@@ -211,6 +221,14 @@ $loading-panel-height: rem(53px);
     z-index: z-index(sticky-cell, $index-table-stacking-order);
     padding: 0;
   }
+}
+
+.TableCell-last {
+  position: sticky;
+  right: 0;
+  z-index: z-index(sticky-cell, $index-table-stacking-order);
+  box-shadow: rem(-1px) rem(-1px) 0 0 var(--p-divider, color('sky'));
+  // background-color: var(--p-surface, color('white'));
 }
 
 .StickyTable {

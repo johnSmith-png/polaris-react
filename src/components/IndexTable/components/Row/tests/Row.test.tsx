@@ -208,6 +208,16 @@ describe('<Row />', () => {
 
     expect(onSelectionChangeSpy).toHaveBeenCalledTimes(1);
   });
+
+  it('has an undefined status by default', () => {
+    const row = mountWithTable(
+      <Row {...defaultProps}>
+        <td />
+      </Row>,
+    );
+
+    expect(row).toHaveReactProps({status: undefined});
+  });
 });
 
 function triggerOnClick(
